@@ -16,7 +16,7 @@ int main()
     // Solicitacao dos atributos carta 1
     printf("Cadastro dos atributos da carta 1: \n");
     printf("Estado (ex: SP): \n");
-    scanf(" %2s", &estado1);
+    scanf(" %2s", estado1);
     printf("Código da Carta (ex:SP01): \n");
     scanf("%s", codigo1);
     printf("Nome da Cidade: \n");
@@ -33,7 +33,7 @@ int main()
     // Solicitação dos atributos carta 2
     printf("\nCadastro dos atributos da carta 2: \n");
     printf("Estado (ex: RJ):: \n");
-    scanf(" %2s", &estado2);
+    scanf(" %2s", estado2);
     printf("Código da carta (ex: RJ02): \n");
     scanf("%s", codigo2);
     printf("Nome da cidade: \n");
@@ -54,7 +54,6 @@ int main()
     float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + densidadePopulacional2 + pibPerCapita2;
 
     //Confronto para comparação
-
     //Comparação das cartas Atributo População
     printf("\n%s X %s\n", cidade1, cidade2);
     printf("\nConfronto dos atributos População:\n");
