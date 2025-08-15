@@ -1,20 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    // Variáveis dos menus (switch)
-    int menuIniciar, menuConfronto;
-    
     // Variáveis Atributos carta 1
     char estado1[3], codigo1[4], cidade1[50];
     int pontosTuristicos1;
     unsigned long int populacao1;
     float area1, pib1;
-
+    
     // Variáveis Atributos carta 2
     char estado2[3], codigo2[4], cidade2[50];
     int pontosTuristicos2;
     unsigned long int populacao2;
     float area2, pib2;
+    
+    // Variáveis dos menus (switch)
+    int menuIniciar, menuConfronto;
 
     // Início do jogo
     printf("*** Bem Vindo ao jogo Super Trunfo. ***\n");
