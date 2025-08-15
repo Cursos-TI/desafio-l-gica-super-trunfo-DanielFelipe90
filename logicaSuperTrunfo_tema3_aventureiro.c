@@ -74,7 +74,7 @@ int main()
         printf("6. PIB per Capita\n");
         printf("7. Super Poder\n");
         printf("Digite sua escolha (1-7): \n");
-        scanf("%d, %s", &menuConfronto);
+        scanf("%d", &menuConfronto);
 
             switch (menuConfronto)
             {
