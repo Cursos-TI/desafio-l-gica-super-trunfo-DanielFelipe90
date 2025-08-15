@@ -38,7 +38,7 @@ int main()
         printf("Digite o nome da Cidade: \n");
         scanf(" %49[^\n]", cidade1);
         printf("Digite a População: \n");
-        scanf("%d", &populacao1);
+        scanf("%lu", &populacao1);
         printf("Digite a Área (em km²): \n");
         scanf("%f", &area1);
         printf("Digite o PIB (em bilhões de reais): \n");
@@ -55,7 +55,7 @@ int main()
         printf("Digite o nome da Cidade: \n");
         scanf(" %49[^\n]", cidade2);
         printf("Digite a População: \n");
-        scanf("%d", &populacao2);
+        scanf("%lu", &populacao2);
         printf("Digite a Área (em km²): \n");
         scanf("%f", &area2);
         printf("Digite o PIB (em bilhões de reais): \n");
@@ -75,23 +75,9 @@ int main()
         printf("Digite sua escolha (1-7): \n");
         scanf("%d", &menuConfronto1);
 
-        // Escolha do atributo para o segundo confronto
-        printf("\nEscolha o segundo atributo para o confronto:\n");
-        printf("1. População\n");
-        printf("2. Área\n");
-        printf("3. PIB\n");
-        printf("4. Pontos Turísticos\n");
-        printf("5. Densidade Populacional\n");
-        printf("6. PIB per Capita\n");
-        printf("7. Super Poder\n");
-        printf("Digite sua escolha (1-7): \n");
-        scanf("%d", &menuConfronto2);
-
-        // Validação
-        if (menuConfronto2 == menuConfronto1 || menuConfronto1 < 1 || menuConfronto1 > 7 || menuConfronto2 < 1 || menuConfronto2 > 7)
+        // Loop para validar o segundo confronto
+        do
         {
-            // Escolha do atributo para o segundo confronto
-            printf("\nInválido ou atributo repetido!\n");
             printf("\nEscolha o segundo atributo para o confronto:\n");
             printf("1. População\n");
             printf("2. Área\n");
@@ -102,7 +88,12 @@ int main()
             printf("7. Super Poder\n");
             printf("Digite sua escolha (1-7): \n");
             scanf("%d", &menuConfronto2);
-        }
+
+            if (menuConfronto2 == menuConfronto1 || menuConfronto2 < 1 || menuConfronto2 > 7)
+            {
+                printf("\nInválido ou atributo repetido! Tente novamente.\n");
+            }
+        } while (menuConfronto2 == menuConfronto1 || menuConfronto2 < 1 || menuConfronto2 > 7);
 
         // Variáveis para o cálculo Densidade demográfica, PIB per capita e Super Poder
         float densidadePopulacional1 = populacao1 / area1;
