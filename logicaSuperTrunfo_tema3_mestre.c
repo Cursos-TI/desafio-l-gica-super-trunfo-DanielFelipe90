@@ -253,7 +253,7 @@ int main()
         } else if (vitoriasCarta2 > vitoriasCarta1) {
             printf("\nResultado Final: \n*** %s Vence!! ***\n", cidade2);
         } else {
-            printf("\nResultado Final: **** Jogo empatou na rodada! ****\n");
+            printf("\nResultado Final: **** Empate! ****\n");
         }
 
         break;
