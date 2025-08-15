@@ -28,7 +28,7 @@ int main()
     switch (menuIniciar)
     {
      case 1:
-        //Inicio do código do jogo
+      //Inicio do código do jogo
         printf("\n*** Iniciando jogo... ***\n");
         // Solicitacao dos atributos carta 1
         printf("Cadastre os atributos da carta 1: \n");
@@ -188,12 +188,8 @@ int main()
                     printf("*** Empate ***");
                 }
                 break;
-            
-             default:
-                break;
             }
-
-        break;
+       break;
      //Fim do código jogo
 
      case '2':
@@ -212,7 +208,7 @@ int main()
      default:
         printf("Opção inválida. Por favor, escolha 1, 2 ou 3.\n");
         break;
-    }
+   }
 
  return 0;
 }
