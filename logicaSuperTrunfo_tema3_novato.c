@@ -61,9 +61,9 @@ int main()
     printf("Carta 1 - Cidade %s População: %lu habitantes\n", cidade2, populacao2);
 
     if( populacao1 > populacao2) {
-        printf("Carta 1 - Cidade %s vence no atributo População.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo População.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo População.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo População.\n", cidade2);
     }
 
     //Comparação das cartas Atributo Área
@@ -72,9 +72,9 @@ int main()
     printf("Carta 2 - Cidade %s Área: %.2f km²\n", cidade2, area2);
 
     if( area1 > area2) {
-        printf("Carta 1 - Cidade %s vence no atributo Área.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo Área.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo Área.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo Área.\n", cidade2);
     }
 
     //Comparação das cartas Atributo PIB
@@ -83,9 +83,9 @@ int main()
     printf("Carta 2 - Cidade %s PIB: R$ %.2f bilhões de reais\n", cidade2, pib2);
 
     if( pib1 > pib2) {
-        printf("Carta 1 - Cidade %s vence no atributo PIB.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo PIB.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo PIB.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo PIB.\n", cidade2);
     }
 
     //Comparação das cartas Atributo Pontos Turísticos
@@ -94,9 +94,9 @@ int main()
     printf("Carta 2 - Cidade %s Pontos Turísticos: %d\n", cidade2, pontosTuristicos2);
 
     if( pontosTuristicos1 > pontosTuristicos2) {
-        printf("Carta 1 - Cidade %s vence no atributo Pontos Turísticos.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo Pontos Turísticos.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo Pontos Turísticos.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo Pontos Turísticos.\n", cidade2);
     }
 
     //Comparação das cartas Atributo Densidade Populacional
@@ -105,9 +105,9 @@ int main()
     printf("Carta 2 - Cidade %s Densidade Populacional: %.2f habitantes/km²\n", cidade2, (float)populacao2 / area2);
 
     if( (float)populacao1 / area1 < (float)populacao2 / area2) {
-        printf("Carta 1- Cidade %s vence no atributo Densidade Populacional.\n", cidade1);
+        printf("Vence a Carta 1- Cidade %s no atributo Densidade Populacional.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo Densidade Populacional.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo Densidade Populacional.\n", cidade2);
     }
 
     //Comparação das cartas Atributo PIB per capita
@@ -116,9 +116,9 @@ int main()
     printf("Carta 2 - Cidade %s PIB per capita: R$ %.2f/habitante\n", cidade2, (float) (pib2 *1e9) / populacao2);
 
     if( (float)(pib1 * 1e9) / populacao1 > (float)(pib2 * 1e9) / populacao2) {
-        printf("Carta 1 - Cidade %s vence no atributo PIB per capita.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo PIB per capita.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo PIB per capita.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo PIB per capita.\n", cidade2);
     }
 
     //Comparação das cartas Atributo Super Poder
@@ -127,9 +127,9 @@ int main()
     printf("Carta 2 - Cidade %s Super Poder: %.2f\n", cidade2, (float) populacao2 + area2 + pib2 + pontosTuristicos2 + (float)(pib2 *1e9) / populacao2);
 
     if( (float) populacao1 + area1 + pib1 + pontosTuristicos1 + (float) (pib1 *1e9) / populacao1 > (float)populacao2 + area2 + pib2 + pontosTuristicos2 + (float)(pib2 *1e9) / populacao2) {
-        printf("Carta 1 - Cidade %s vence no atributo Super Poder.\n", cidade1);
+        printf("Vence a Carta 1 - Cidade %s no atributo Super Poder.\n", cidade1);
     }  else {
-        printf("Carta 2 - Cidade %s vence no atributo Super Poder.\n", cidade2);
+        printf("Vence a Carta 2 - Cidade %s no atributo Super Poder.\n", cidade2);
     }
 
     return 0;
