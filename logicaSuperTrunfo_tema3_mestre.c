@@ -29,7 +29,6 @@ int main()
     int vitoriasCarta1 = 0;
     int vitoriasCarta2 = 0;
 
-    // Inicio do código do jogo
     printf("*** Bem Vindo ao jogo Super Trunfo. ***\n");
     printf("Escolha uma opção: \n");
     printf("1. Jogar \n");
@@ -38,10 +37,11 @@ int main()
     printf("Digite sua escolha (1-3): \n");
     scanf(" %d", &menuIniciar);
     clear_input_buffer();
-
+    
     switch (menuIniciar)
     {
-    case 1:
+        case 1:
+        // Inicio do código do jogo
         // Solicitacao dos atributos carta 1
         printf("Cadastre os atributos da carta 1: \n");
         printf("Digite o Estado (ex: SP): \n");
