@@ -141,7 +141,7 @@ int main()
 
         // Resultado do confronto
         printf("\n*** Confronto ***\n");
-
+        printf("*** %s X %s ***\n",cidade1, cidade2);
         // --- Confronto 1 ---
         printf("\nConfronto do Primeiro Atributo: \n");
         switch (menuConfronto1)
@@ -249,11 +249,11 @@ int main()
         printf("Vitórias de %s: %d\n", cidade2, vitoriasCarta2);
         
         if (vitoriasCarta1 > vitoriasCarta2) {
-            printf("\nResultado Final do Confronto: \n*** %s Vence!! ***\n", cidade1);
+            printf("\nResultado Final: \n*** %s Vence!! ***\n", cidade1);
         } else if (vitoriasCarta2 > vitoriasCarta1) {
-            printf("\nResultado Final do Confronto: \n*** %s Vence!! ***\n", cidade2);
+            printf("\nResultado Final: \n*** %s Vence!! ***\n", cidade2);
         } else {
-            printf("\nResultado Final do Confronto: **** Jogo empatou na rodada! ****\n");
+            printf("\nResultado Final: **** Jogo empatou na rodada! ****\n");
         }
 
         break;
