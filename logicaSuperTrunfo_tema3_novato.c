@@ -4,13 +4,13 @@ int main()
     // Variáveis Atributos da carta 1
     char estado1[3], codigo1[5], cidade1[50];
     int pontosTuristicos1;
-    float area1, pib1;
+    float area1, pib1, densidadePopulacional1, pibPerCapita1, superPoder1;
     unsigned long int populacao1;
 
     // Variáveis Atributos da carta 2
     char estado2[3], codigo2[5], cidade2[50];
     int pontosTuristicos2;
-    float area2, pib2;
+    float area2, pib2, densidadePopulacional2, pibPerCapita2, superPoder2;
     unsigned long int populacao2;
 
     // Solicitacao dos atributos carta 1
@@ -47,11 +47,17 @@ int main()
     printf("Número de pontos turísticos: \n");
     scanf("%d", &pontosTuristicos2);
 
-    // Variáveis do cálculo da densidade populacional, PIB per capita e Super Poder
-    float densidadePopulacional1 = populacao1 / area1, densidadePopulacional2 = populacao2 / area2;
-    float pibPerCapita1 = (pib1 * 1e9) / populacao1, pibPerCapita2 = (pib2 * 1e9) / populacao2;
-    float superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + densidadePopulacional1 + pibPerCapita1;
-    float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + densidadePopulacional2 + pibPerCapita2;
+    // Calcula os atributos derivados após todas as entradas
+        densidadePopulacional1 = populacao1 / area1;
+        densidadePopulacional2 = populacao2 / area2;
+        pibPerCapita1 = (pib1 * 1e9) / populacao1;
+        pibPerCapita2 = (pib2 * 1e9) / populacao2;
+        // Adiciona o inverso da densidade populacional ao super poder, com verificação de divisão por zero
+        superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 +
+                      (densidadePopulacional1 != 0.0f ? (1.0f / densidadePopulacional1) : 0.0f);
+        superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 +
+                      (densidadePopulacional2 != 0.0f ? (1.0f / densidadePopulacional2) : 0.0f);
+
 
     //Confronto para comparação
     //Comparação das cartas Atributo População
