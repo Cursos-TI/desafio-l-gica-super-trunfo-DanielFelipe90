@@ -29,6 +29,7 @@ int main()
     int vitoriasCarta1 = 0;
     int vitoriasCarta2 = 0;
 
+    // Inicio do código do jogo
     printf("*** Bem Vindo ao jogo Super Trunfo. ***\n");
     printf("Escolha uma opção: \n");
     printf("1. Jogar \n");
@@ -37,57 +38,57 @@ int main()
     printf("Digite sua escolha (1-3): \n");
     scanf(" %d", &menuIniciar);
     clear_input_buffer();
-    
+
     switch (menuIniciar)
     {
-        case 1:
-        // Inicio do código do jogo
-        // Solicitacao dos atributos carta 1
-        printf("Cadastre os atributos da carta 1: \n");
+    case 1:
+
+        // Cadastro dos atributos da carta 1
+        printf("\nCadastre os atributos da carta 1: \n");
         printf("Digite o Estado (ex: SP): \n");
-        scanf(" %2s", estado1);
+        scanf("%2s", estado1);
         clear_input_buffer();
-        printf("Digite Código da Carta (ex:SP01): \n");
-        scanf(" %s", codigo1);
+        printf("Digite o Código da Carta (ex: SP01): \n");
+        scanf("%3s", codigo1);
         clear_input_buffer();
         printf("Digite o nome da Cidade: \n");
-        scanf(" %49[^\n]", cidade1);
-        clear_input_buffer();
+        fgets(cidade1, sizeof(cidade1), stdin);
+        cidade1[strcspn(cidade1, "\n")] = 0; // Remove o '\n' do final
         printf("Digite a População: \n");
-        scanf(" %lu", &populacao1);
+        scanf("%lu", &populacao1);
         clear_input_buffer();
         printf("Digite a Área (em km²): \n");
-        scanf(" %f", &area1);
+        scanf("%f", &area1);
         clear_input_buffer();
         printf("Digite o PIB (em bilhões de reais): \n");
-        scanf(" %f", &pib1);
+        scanf("%f", &pib1);
         clear_input_buffer();
         printf("Digite o número de Pontos Turísticos: \n");
-        scanf(" %d", &pontosTuristicos1);
+        scanf("%d", &pontosTuristicos1);
         clear_input_buffer();
 
-        // Solicitacao dos atributos carta 2
+        // Cadastro dos atributos da carta 2
         printf("\nCadastre os atributos da carta 2: \n");
         printf("Digite o Estado (ex: RJ): \n");
-        scanf(" %2s", estado2);
+        scanf("%2s", estado2);
         clear_input_buffer();
-        printf("Digite Código da Carta (ex: RJ02): \n");
-        scanf(" %s", codigo2);
+        printf("Digite o Código da Carta (ex: RJ02): \n");
+        scanf("%3s", codigo2);
         clear_input_buffer();
         printf("Digite o nome da Cidade: \n");
-        scanf(" %49[^\n]", cidade2);
-        clear_input_buffer();
+        fgets(cidade2, sizeof(cidade2), stdin);
+        cidade2[strcspn(cidade2, "\n")] = 0; // Remove o '\n' do final
         printf("Digite a População: \n");
-        scanf(" %lu", &populacao2);
+        scanf("%lu", &populacao2);
         clear_input_buffer();
         printf("Digite a Área (em km²): \n");
-        scanf(" %f", &area2);
+        scanf("%f", &area2);
         clear_input_buffer();
         printf("Digite o PIB (em bilhões de reais): \n");
-        scanf(" %f", &pib2);
+        scanf("%f", &pib2);
         clear_input_buffer();
         printf("Digite o Número de Pontos turísticos: \n");
-        scanf(" %d", &pontosTuristicos2);
+        scanf("%d", &pontosTuristicos2);
         clear_input_buffer();
 
         // Calcula os atributos derivados após todas as entradas
@@ -141,7 +142,7 @@ int main()
 
         // Resultado do confronto
         printf("\n*** Confronto ***\n");
-        printf("*** %s X %s ***\n",cidade1, cidade2);
+
         // --- Confronto 1 ---
         printf("\nConfronto do Primeiro Atributo: \n");
         switch (menuConfronto1)
@@ -185,11 +186,14 @@ int main()
 
         printf("\n%s: %.2f\n%s: %.2f\n", cidade1, menuConfronto1_Valor1_carta1, cidade2, menuConfronto2_valor2_carta1);
         printf("Vencedor: %s\n", (menuConfronto1 == 5) ? (menuConfronto1_Valor1_carta1 < menuConfronto2_valor2_carta1 ? cidade1 : (menuConfronto2_valor2_carta1 < menuConfronto1_Valor1_carta1 ? cidade2 : "Empate")) : (menuConfronto1_Valor1_carta1 > menuConfronto2_valor2_carta1 ? cidade1 : (menuConfronto2_valor2_carta1 > menuConfronto1_Valor1_carta1 ? cidade2 : "Empate")));
-        
+
         // Lógica para incrementar o contador de vitórias do primeiro confronto
-        if ((menuConfronto1 == 5 && menuConfronto1_Valor1_carta1 < menuConfronto2_valor2_carta1) || (menuConfronto1 != 5 && menuConfronto1_Valor1_carta1 > menuConfronto2_valor2_carta1)) {
+        if ((menuConfronto1 == 5 && menuConfronto1_Valor1_carta1 < menuConfronto2_valor2_carta1) || (menuConfronto1 != 5 && menuConfronto1_Valor1_carta1 > menuConfronto2_valor2_carta1))
+        {
             vitoriasCarta1++;
-        } else if ((menuConfronto1 == 5 && menuConfronto2_valor2_carta1 < menuConfronto1_Valor1_carta1) || (menuConfronto1 != 5 && menuConfronto2_valor2_carta1 > menuConfronto1_Valor1_carta1)) {
+        }
+        else if ((menuConfronto1 == 5 && menuConfronto2_valor2_carta1 < menuConfronto1_Valor1_carta1) || (menuConfronto1 != 5 && menuConfronto2_valor2_carta1 > menuConfronto1_Valor1_carta1))
+        {
             vitoriasCarta2++;
         }
 
@@ -238,21 +242,29 @@ int main()
         printf("Vencedor: %s\n", (menuConfronto2 == 5) ? (menuConfronto1_valor1_carta2 < menuConfronto2_valor2_carta2 ? cidade1 : (menuConfronto2_valor2_carta2 < menuConfronto1_valor1_carta2 ? cidade2 : "Empate")) : (menuConfronto1_valor1_carta2 > menuConfronto2_valor2_carta2 ? cidade1 : (menuConfronto2_valor2_carta2 > menuConfronto1_valor1_carta2 ? cidade2 : "Empate")));
 
         // Lógica para incrementar o contador de vitórias do segundo confronto
-        if ((menuConfronto2 == 5 && menuConfronto1_valor1_carta2 < menuConfronto2_valor2_carta2) || (menuConfronto2 != 5 && menuConfronto1_valor1_carta2 > menuConfronto2_valor2_carta2)) {
+        if ((menuConfronto2 == 5 && menuConfronto1_valor1_carta2 < menuConfronto2_valor2_carta2) || (menuConfronto2 != 5 && menuConfronto1_valor1_carta2 > menuConfronto2_valor2_carta2))
+        {
             vitoriasCarta1++;
-        } else if ((menuConfronto2 == 5 && menuConfronto2_valor2_carta2 < menuConfronto1_valor1_carta2) || (menuConfronto2 != 5 && menuConfronto2_valor2_carta2 > menuConfronto1_valor1_carta2)) {
+        }
+        else if ((menuConfronto2 == 5 && menuConfronto2_valor2_carta2 < menuConfronto1_valor1_carta2) || (menuConfronto2 != 5 && menuConfronto2_valor2_carta2 > menuConfronto1_valor1_carta2))
+        {
             vitoriasCarta2++;
         }
-        
+
         // Lógica final para determinar o vencedor da rodada
         printf("\nVitórias de %s: %d\n", cidade1, vitoriasCarta1);
         printf("Vitórias de %s: %d\n", cidade2, vitoriasCarta2);
-        
-        if (vitoriasCarta1 > vitoriasCarta2) {
+
+        if (vitoriasCarta1 > vitoriasCarta2)
+        {
             printf("\nResultado Final: \n*** %s Vence!! ***\n", cidade1);
-        } else if (vitoriasCarta2 > vitoriasCarta1) {
+        }
+        else if (vitoriasCarta2 > vitoriasCarta1)
+        {
             printf("\nResultado Final: \n*** %s Vence!! ***\n", cidade2);
-        } else {
+        }
+        else
+        {
             printf("\nResultado Final: **** Empate! ****\n");
         }
 
