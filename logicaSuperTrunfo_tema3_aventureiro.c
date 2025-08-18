@@ -1,4 +1,13 @@
 #include <stdio.h>
+#include <string.h>
+
+// Função para limpar o buffer de entrada
+void clear_input_buffer()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 int main()
 {
     // Variáveis Atributos carta 1
@@ -24,6 +33,7 @@ int main()
     printf("3. Sair.\n");
     printf("Digite sua escolha (1-3): \n");
     scanf("%d", &menuIniciar);
+    clear_input_buffer();
 
     switch (menuIniciar)
     {
@@ -31,38 +41,52 @@ int main()
       //Inicio do código do jogo
         printf("\n*** Iniciando jogo... ***\n");
         // Solicitacao dos atributos carta 1
-        printf("Cadastre os atributos da carta 1: \n");
+        printf("\nCadastre os atributos da carta 1: \n");
         printf("Digite o Estado (ex: SP): \n");
-        scanf(" %2s", estado1);
-        printf("Digite Código da Carta (ex:SP01): \n");
-        scanf(" %s", codigo1);
+        scanf("%2s", estado1);
+        clear_input_buffer();
+        printf("Digite o Código da Carta (ex: SP01): \n");
+        scanf("%3s", codigo1);
+        clear_input_buffer();
         printf("Digite o nome da Cidade: \n");
-        scanf(" %49[^\n]", cidade1);
+        fgets(cidade1, sizeof(cidade1), stdin);
+        cidade1[strcspn(cidade1, "\n")] = 0; // Remove o '\n' do final
         printf("Digite a População: \n");
         scanf("%lu", &populacao1);
+        clear_input_buffer();
         printf("Digite a Área (em km²): \n");
         scanf("%f", &area1);
+        clear_input_buffer();
         printf("Digite o PIB (em bilhões de reais): \n");
         scanf("%f", &pib1);
+        clear_input_buffer();
         printf("Digite o número de Pontos Turísticos: \n");
         scanf("%d", &pontosTuristicos1);
+        clear_input_buffer();
 
-        // Solicitacao dos atributos carta 2
+        // Cadastro dos atributos da carta 2
         printf("\nCadastre os atributos da carta 2: \n");
         printf("Digite o Estado (ex: RJ): \n");
-        scanf(" %2s", estado2);
-        printf("Digite Código da Carta (ex: RJ02): \n");
-        scanf("%s", codigo2);
+        scanf("%2s", estado2);
+        clear_input_buffer();
+        printf("Digite o Código da Carta (ex: RJ02): \n");
+        scanf("%3s", codigo2);
+        clear_input_buffer();
         printf("Digite o nome da Cidade: \n");
-        scanf(" %49[^\n]", cidade2);
+        fgets(cidade2, sizeof(cidade2), stdin);
+        cidade2[strcspn(cidade2, "\n")] = 0; // Remove o '\n' do final
         printf("Digite a População: \n");
         scanf("%lu", &populacao2);
+        clear_input_buffer();
         printf("Digite a Área (em km²): \n");
         scanf("%f", &area2);
+        clear_input_buffer();
         printf("Digite o PIB (em bilhões de reais): \n");
         scanf("%f", &pib2);
+        clear_input_buffer();
         printf("Digite o Número de Pontos turísticos: \n");
         scanf("%d", &pontosTuristicos2);
+        clear_input_buffer();
 
         // Menu para escolher o atributo para o confronto
         printf("\nEscolha o atributo para o confronto:\n");
@@ -75,6 +99,7 @@ int main()
         printf("7. Super Poder\n");
         printf("Digite sua escolha (1-7): \n");
         scanf("%d", &menuConfronto);
+        clear_input_buffer();
 
             switch (menuConfronto)
             {
